@@ -11,8 +11,12 @@
     <Version>1.0.0</Version>
     <Authors>Dudziak07</Authors>
     <Description>Set of reusable WPF styles for Spectrium applications.</Description>
-    <RepositoryUrl>https://github.com/twoja-nazwa/Spectrium.Styles.Wpf</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Dudziak07/SpectriumLive.Styles</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include=".github\workflows\publish.yml" />
+  </ItemGroup>
 
 </Project>
