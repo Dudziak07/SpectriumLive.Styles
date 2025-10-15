@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Spectrium.Styles</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dudziak07</Authors>
+    <Description>Set of reusable WPF styles for Spectrium applications.</Description>
+    <RepositoryUrl>https://github.com/twoja-nazwa/Spectrium.Styles.Wpf</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>
