@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net9.0-windows</TargetFramework>
@@ -16,7 +16,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".github\workflows\publish.yml" />
+    <Compile Remove=".github\**" />
+    <EmbeddedResource Remove=".github\**" />
+    <None Remove=".github\**" />
+    <Page Remove=".github\**" />
   </ItemGroup>
 
 </Project>

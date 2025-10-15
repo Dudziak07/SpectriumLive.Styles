@@ -21,11 +21,4 @@
     <!-- GroupBox -->
     <SolidColorBrush x:Key="GroupBox.Border" Color="#D0D0D0"/>
     <SolidColorBrush x:Key="GroupBox.Header.Foreground" Color="#1E1E1E"/>
-    
-    <!-- Menu -->
-    <SolidColorBrush x:Key="Menu.Background" Color="#F0F0F0"/>
-    <SolidColorBrush x:Key="Menu.Foreground" Color="#1E1E1E"/>
-    <SolidColorBrush x:Key="MenuItem.Hover.Background" Color="#BEE6FD"/>
-    <SolidColorBrush x:Key="MenuItem.Hover.Foreground" Color="#1E1E1E"/>
-    <SolidColorBrush x:Key="MenuItem.Separator.Color" Color="#D0D0D0"/>
 </ResourceDictionary>
