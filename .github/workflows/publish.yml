@@ -23,7 +23,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Pack
-      run: dotnet pack --configuration Release --no-build --output ./nupkg -p:PackageVersion=${{ github.ref_name | trimstart('v') }}
+      run: |
+        $VERSION = "${{ github.ref_name }}".TrimStart('v')
+        dotnet pack --configuration Release --no-build --output ./nupkg -p:PackageVersion=$VERSION
 
     - name: Push to GitHub Packages
       run: dotnet nuget push "nupkg/**/*.nupkg" --api-key ${{ secrets.NUGET_AUTH_TOKEN }} --source "https://nuget.pkg.github.com/Dudziak07/index.json" --skip-duplicate
