@@ -3,6 +3,8 @@
                     xmlns:converters="clr-namespace:SpectriumLive.Styles.Converters">
 
     <converters:MenuPlacementConverter x:Key="MenuPlacementConverter"/>
+    <converters:MenuArrowVisibilityConverter x:Key="MenuArrowVisibilityConverter"/>
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 
     <!-- Button -->
     <Style TargetType="{x:Type Button}">
@@ -116,39 +118,61 @@
             <Setter.Value>
                 <ControlTemplate TargetType="MenuItem">
                     <Border x:Name="Border"
-                    Background="{TemplateBinding Background}"
-                    CornerRadius="4"
-                    BorderThickness="1"
-                    BorderBrush="Transparent">
-                        <Grid>
-                            <ContentPresenter x:Name="HeaderHost"
-                                      ContentSource="Header"
-                                      Margin="{TemplateBinding Padding}"
-                                      VerticalAlignment="Center"
-                                      RecognizesAccessKey="True"/>
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4"
+                        BorderThickness="1"
+                        BorderBrush="Transparent">
+                        <DockPanel LastChildFill="True">
 
+                            <!-- Content -->
+                            <ContentPresenter x:Name="HeaderHost"
+                                          ContentSource="Header"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True"/>
+
+                            <!-- Arrow on right -->
+                            <Path x:Name="Arrow"
+                                  DockPanel.Dock="Right"
+                                  VerticalAlignment="Center"
+                                  Margin="6,0,6,0"
+                                  Width="8"
+                                  Height="8"
+                                  Stretch="Uniform"
+                                  Data="M 0 0 L 5 3 L 0 6 Z"
+                                  Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Path.Visibility>
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" 
+                                             Converter="{StaticResource MenuArrowVisibilityConverter}"/>
+                                </Path.Visibility>
+                            </Path>
+
+                            <!-- Popup submenu -->
                             <Popup x:Name="Popup"
-                                   IsOpen="{TemplateBinding IsSubmenuOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   Placement="{Binding RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MenuPlacementConverter}}">
+                               IsOpen="{TemplateBinding IsSubmenuOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Fade"
+                               Placement="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                   Converter={StaticResource MenuPlacementConverter}}">
                                 <Border Background="{DynamicResource SecondaryBackgroundColor}"
-                                        BorderBrush="{DynamicResource MenuItem.Submenu.Border}"
-                                        BorderThickness="1"
-                                        CornerRadius="4"
-                                        Padding="2">
+                                    BorderBrush="{DynamicResource MenuItem.Submenu.Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="4"
+                                    Padding="2">
                                     <StackPanel IsItemsHost="True"
-                                                KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                                            KeyboardNavigation.DirectionalNavigation="Cycle"/>
                                 </Border>
                             </Popup>
-                        </Grid>
+                        </DockPanel>
                     </Border>
 
                     <ControlTemplate.Triggers>
 
-                        <!-- Main menu-->
+                        <!-- Main menu -->
                         <Trigger Property="Role" Value="TopLevelHeader">
                             <Setter TargetName="Popup" Property="Placement" Value="Bottom"/>
+                            <Setter TargetName="Arrow" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
 
                         <!-- Submenu -->
@@ -156,28 +180,37 @@
                             <Setter TargetName="Popup" Property="Placement" Value="Right"/>
                         </Trigger>
 
+                        <!-- Show arrow only when has kids and parent -->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HasItems}" Value="True"/>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Role}" Value="SubmenuItem"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="Arrow" Property="Visibility" Value="Visible"/>
+                        </MultiDataTrigger>
+
                         <!-- Hover -->
                         <Trigger Property="IsHighlighted" Value="True">
                             <Setter TargetName="Border" Property="Background"
-                            Value="{DynamicResource MenuItem.MouseOver.Background}"/>
+                                Value="{DynamicResource MenuItem.MouseOver.Background}"/>
                             <Setter TargetName="Border" Property="BorderBrush"
-                            Value="{DynamicResource MenuItem.MouseOver.Border}"/>
+                                Value="{DynamicResource MenuItem.MouseOver.Border}"/>
                         </Trigger>
 
-                        <!-- Opened submenu -->
+                        <!-- Open submenu -->
                         <Trigger Property="IsSubmenuOpen" Value="True">
                             <Setter TargetName="Border" Property="Background"
-                            Value="{DynamicResource MenuItem.Pressed.Background}"/>
+                                Value="{DynamicResource MenuItem.Pressed.Background}"/>
                             <Setter TargetName="Border" Property="BorderBrush"
-                            Value="{DynamicResource MenuItem.Pressed.Border}"/>
+                                Value="{DynamicResource MenuItem.Pressed.Border}"/>
                         </Trigger>
 
-                        <!-- Off -->
+                        <!-- Disabled -->
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground"
-                            Value="{DynamicResource Disabled.ForegroundColor}"/>
+                                Value="{DynamicResource Disabled.ForegroundColor}"/>
                             <Setter TargetName="Border" Property="Background"
-                            Value="{DynamicResource Disabled.BackgroundColor}"/>
+                                Value="{DynamicResource Disabled.BackgroundColor}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
