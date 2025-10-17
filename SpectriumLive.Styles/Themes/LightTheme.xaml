@@ -54,4 +54,19 @@
     <SolidColorBrush x:Key="Slider.Thumb.Disabled.Background" Color="#A0A0A0"/>
     <SolidColorBrush x:Key="Slider.Tick.Fill" Color="#808080"/>
 
+    <!-- ComboBox -->
+    <SolidColorBrush x:Key="ComboBox.Static.Background" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#ADADAD"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Foreground" Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Border" Color="#7EB4DD"/>
+    <SolidColorBrush x:Key="ComboBox.Pressed.Border" Color="#C90094"/>
+    <SolidColorBrush x:Key="ComboBox.Arrow.Static.Fill" Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="ComboBox.Popup.Background" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ComboBox.Popup.Border" Color="#D0D0D0"/>
+
+    <!-- ComboBoxItem -->
+    <SolidColorBrush x:Key="ComboBoxItem.MouseOver.Background" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="ComboBoxItem.Selected.Background" Color="#C90094"/>
+    <SolidColorBrush x:Key="ComboBoxItem.Selected.Foreground" Color="#FFFFFF"/>
+
 </ResourceDictionary>
