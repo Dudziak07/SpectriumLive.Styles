@@ -32,5 +32,16 @@
     <SolidColorBrush x:Key="MenuItem.Foreground" Color="#1E1E1E"/>
     <SolidColorBrush x:Key="MenuItem.Submenu.Border" Color="#D0D0D0"/>
 
+    <!-- TextBox -->
+    <SolidColorBrush x:Key="TextBox.Static.Background" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="TextBox.Static.Border" Color="#ADADAD"/>
+    <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#7EB4DD"/>
+    <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#C90094"/>
+    <SolidColorBrush x:Key="TextBox.Caret" Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="TextBox.Selection" Color="#40C90094"/>
+
+    <!-- TextBlock -->
+    <SolidColorBrush x:Key="TextBlock.Foreground" Color="#1E1E1E"/>
 
 </ResourceDictionary>
