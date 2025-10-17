@@ -43,5 +43,15 @@
 
     <!-- TextBlock -->
     <SolidColorBrush x:Key="TextBlock.Foreground" Color="#F0F0F0"/>
+    
+    <!-- Slider -->
+    <SolidColorBrush x:Key="Slider.Track.Background" Color="#404040"/>
+    <SolidColorBrush x:Key="Slider.SelectionRange.Background" Color="#C90094"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Static.Background" Color="#A0A0A0"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Static.Border" Color="#ACACAC"/>
+    <SolidColorBrush x:Key="Slider.Thumb.MouseOver.Background" Color="#E0E0E0"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Pressed.Background" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Disabled.Background" Color="#606060"/>
+    <SolidColorBrush x:Key="Slider.Tick.Fill" Color="#808080"/>
 
 </ResourceDictionary>
