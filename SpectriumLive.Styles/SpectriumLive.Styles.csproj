@@ -8,13 +8,17 @@
   
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SpectriumLive.Styles</PackageId>
-    <Version>1.10.1</Version>
+    <Version>1.10.2</Version>
     <Authors>Dudziak07</Authors>
     <Description>Set of reusable WPF styles for Spectrium applications.</Description>
     <RepositoryUrl>https://github.com/Dudziak07/SpectriumLive.Styles</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Copyright>Copyright (c) 2025 Dudziak07</Copyright>
   </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE.txt" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
   <ItemGroup>
     <Compile Remove=".github\**" />
