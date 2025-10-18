@@ -13,6 +13,7 @@
     <Description>Set of reusable WPF styles for Spectrium applications.</Description>
     <RepositoryUrl>https://github.com/Dudziak07/SpectriumLive.Styles</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright (c) 2025 Dudziak07</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
