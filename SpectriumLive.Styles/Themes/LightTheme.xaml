@@ -69,4 +69,8 @@
     <SolidColorBrush x:Key="ComboBoxItem.Selected.Background" Color="#C90094"/>
     <SolidColorBrush x:Key="ComboBoxItem.Selected.Foreground" Color="#FFFFFF"/>
 
+    <!-- RadioButton -->
+    <SolidColorBrush x:Key="RadioButton.Glyph.Static.Fill" Color="#606060"/>
+    <SolidColorBrush x:Key="RadioButton.Glyph.MouseOver.Fill" Color="#1E1E1E"/>
+    
 </ResourceDictionary>

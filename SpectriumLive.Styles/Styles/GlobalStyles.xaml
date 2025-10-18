@@ -507,4 +507,55 @@
         </Setter>
     </Style>
 
+    <!-- RadioButton -->
+    <Style TargetType="{x:Type RadioButton}">
+        <Setter Property="Foreground" Value="{DynamicResource TextBlock.Foreground}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Path x:Name="Glyph"
+                              Grid.Column="0"
+                              Width="10" Height="10"
+                              Stretch="Uniform"
+                              Margin="0,0,8,0"
+                              VerticalAlignment="Center"
+                              Fill="{DynamicResource RadioButton.Glyph.Static.Fill}"
+                              Data="M 3 3 A 1.5 1.5 0 1 1 2.999 3 Z"/>
+                        <ContentPresenter Grid.Column="1"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Glyph" Property="Data" Value="M 0 0 L 5 3 L 0 6 Z"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{DynamicResource AccentColor}"/>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{DynamicResource RadioButton.Glyph.MouseOver.Fill}"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource Disabled.ForegroundColor}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{DynamicResource Disabled.ForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
