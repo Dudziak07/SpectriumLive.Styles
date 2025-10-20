@@ -6,8 +6,8 @@
     <SolidColorBrush x:Key="PrimaryForegroundColor" Color="#F0F0F0"/>
     <SolidColorBrush x:Key="BorderColor" Color="#505050"/>
     <SolidColorBrush x:Key="AccentColor" Color="#C90094"/>
-    <SolidColorBrush x:Key="Disabled.ForegroundColor" Color="#606060"/>
-    <SolidColorBrush x:Key="Disabled.BackgroundColor" Color="#404040"/>
+    <SolidColorBrush x:Key="Disabled.ForegroundColor" Color="#505050"/>
+    <SolidColorBrush x:Key="Disabled.BackgroundColor" Color="#303030"/>
 
     <!-- Button -->
     <SolidColorBrush x:Key="Button.Static.Background" Color="#3F3F3F"/>
