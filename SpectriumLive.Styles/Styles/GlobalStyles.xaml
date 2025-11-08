@@ -604,4 +604,101 @@
         </Setter>
     </Style>
 
+    <!-- TabControl -->
+    <Style TargetType="{x:Type TabControl}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TabControl.Content.Border}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TabPanel x:Name="PART_HeaderPanel"
+                                  Grid.Row="0"
+                                  IsItemsHost="True"
+                                  Margin="2,2,2,0"
+                                  Background="Transparent"
+                                  KeyboardNavigation.TabIndex="1"/>
+
+                        <Border x:Name="ContentPanel"
+                                Grid.Row="1"
+                                Background="{DynamicResource TabControl.Content.Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5"
+                                KeyboardNavigation.DirectionalNavigation="Contained"
+                                KeyboardNavigation.TabIndex="2"
+                                KeyboardNavigation.TabNavigation="Local">
+                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                              ContentSource="SelectedContent"
+                                              Margin="{TemplateBinding Padding}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabStripPlacement" Value="Top">
+                            <Setter TargetName="ContentPanel" Property="BorderThickness" Value="1"/>
+                            <Setter TargetName="ContentPanel" Property="CornerRadius" Value="0,5,5,5"/>
+                            <Setter TargetName="ContentPanel" Property="Margin" Value="0,-1,0,0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- TabItem -->
+    <Style TargetType="{x:Type TabItem}">
+        <Setter Property="Background" Value="{DynamicResource TabItem.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TabItem.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Foreground}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border x:Name="Bd"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5,5,0,0"
+                        Margin="0,0,2,0"
+                        SnapsToDevicePixels="True">
+                        <ContentPresenter x:Name="Content"
+                                      ContentSource="Header"
+                                      HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                      Margin="{TemplateBinding Padding}"
+                                      RecognizesAccessKey="True"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource TabItem.MouseOver.Background}"/>
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource TabItem.MouseOver.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TabItem.Selected.Foreground}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource TabItem.Selected.Background}"/>
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource TabItem.Selected.Border}"/>
+                            <Setter TargetName="Bd" Property="BorderThickness" Value="1,1,1,0"/>
+                            <Setter TargetName="Bd" Property="Margin" Value="0,0,2,-1"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource Disabled.ForegroundColor}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Disabled.BackgroundColor}"/>
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource Disabled.BackgroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

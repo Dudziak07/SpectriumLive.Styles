@@ -72,5 +72,18 @@
     <!-- RadioButton -->
     <SolidColorBrush x:Key="RadioButton.Glyph.Static.Fill" Color="#606060"/>
     <SolidColorBrush x:Key="RadioButton.Glyph.MouseOver.Fill" Color="#1E1E1E"/>
-    
+
+    <!-- TabControl -->
+    <SolidColorBrush x:Key="TabControl.Content.Background" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="TabControl.Content.Border" Color="#D0D0D0"/>
+
+    <!-- TabItem -->
+    <SolidColorBrush x:Key="TabItem.Static.Background" Color="#E1E1E1"/>
+    <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ADADAD"/>
+    <SolidColorBrush x:Key="TabItem.MouseOver.Background" Color="#BEE6FD"/>
+    <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#3C7FB1"/>
+    <SolidColorBrush x:Key="TabItem.Selected.Background" Color="#C90094"/>
+    <SolidColorBrush x:Key="TabItem.Selected.Foreground" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#C90094"/>
+
 </ResourceDictionary>
