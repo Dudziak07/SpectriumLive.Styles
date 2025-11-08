@@ -86,4 +86,22 @@
     <SolidColorBrush x:Key="TabItem.Selected.Foreground" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#C90094"/>
 
+    <!-- ScrollBar -->
+    <SolidColorBrush x:Key="ScrollBar.Track.Static.Background" Color="#2D2D2D"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Background" Color="#3F3F3F"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Border" Color="#5A5A5A"/>
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Background" Color="#555555"/>
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Border" Color="#7A7A7A"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Background" Color="#6A6A6A"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Border" Color="#909090"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.Static.Background" Color="#686868"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.Static.Border" Color="#7A7A7A"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.MouseOver.Background" Color="#808080"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.MouseOver.Border" Color="#909090"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.Pressed.Background" Color="#A0A0A0"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.Pressed.Border" Color="#ACACAC"/>
+    <SolidColorBrush x:Key="ScrollBar.Glyph.Static.Fill" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="ScrollBar.Glyph.MouseOver.Fill" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ScrollBar.Glyph.Pressed.Fill" Color="#FFFFFF"/>
+
 </ResourceDictionary>

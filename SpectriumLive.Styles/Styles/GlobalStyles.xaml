@@ -701,4 +701,183 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!-- ScrollBar Thumb -->
+    <Style x:Key="ScrollBarThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border x:Name="thumbBorder"
+                            Background="{DynamicResource ScrollBar.Thumb.Static.Background}"
+                            BorderBrush="{DynamicResource ScrollBar.Thumb.Static.Border}"
+                            BorderThickness="1"
+                            CornerRadius="4"/>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Orientation, RelativeSource={RelativeSource AncestorType={x:Type Track}}}" Value="Vertical">
+                            <Setter TargetName="thumbBorder" Property="Margin" Value="1,0"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Orientation, RelativeSource={RelativeSource AncestorType={x:Type Track}}}" Value="Horizontal">
+                            <Setter TargetName="thumbBorder" Property="Margin" Value="0,1"/>
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="thumbBorder" Property="Background" Value="{DynamicResource ScrollBar.Thumb.MouseOver.Background}"/>
+                            <Setter TargetName="thumbBorder" Property="BorderBrush" Value="{DynamicResource ScrollBar.Thumb.MouseOver.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="thumbBorder" Property="Background" Value="{DynamicResource ScrollBar.Thumb.Pressed.Background}"/>
+                            <Setter TargetName="thumbBorder" Property="BorderBrush" Value="{DynamicResource ScrollBar.Thumb.Pressed.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="thumbBorder" Property="Background" Value="{DynamicResource Disabled.BackgroundColor}"/>
+                            <Setter TargetName="thumbBorder" Property="BorderBrush" Value="{DynamicResource Disabled.BackgroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ScrollBar Page Button-->
+    <Style x:Key="ScrollBarPageButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ScrollBar Line Button -->
+    <Style x:Key="ScrollBarLineButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border x:Name="arrowBorder"
+                            Background="{DynamicResource ScrollBar.Static.Background}"
+                            BorderBrush="{DynamicResource ScrollBar.Static.Border}"
+                            BorderThickness="1"
+                            CornerRadius="3">
+                        <Path x:Name="arrow"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
+                              Fill="{DynamicResource ScrollBar.Glyph.Static.Fill}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="arrowBorder" Property="Background" Value="{DynamicResource ScrollBar.MouseOver.Background}"/>
+                            <Setter TargetName="arrowBorder" Property="BorderBrush" Value="{DynamicResource ScrollBar.MouseOver.Border}"/>
+                            <Setter TargetName="arrow" Property="Fill" Value="{DynamicResource ScrollBar.Glyph.MouseOver.Fill}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="arrowBorder" Property="Background" Value="{DynamicResource ScrollBar.Pressed.Background}"/>
+                            <Setter TargetName="arrowBorder" Property="BorderBrush" Value="{DynamicResource ScrollBar.Pressed.Border}"/>
+                            <Setter TargetName="arrow" Property="Fill" Value="{DynamicResource ScrollBar.Glyph.Pressed.Fill}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource Disabled.ForegroundColor}"/>
+                            <Setter TargetName="arrowBorder" Property="Background" Value="{DynamicResource Disabled.BackgroundColor}"/>
+                            <Setter TargetName="arrowBorder" Property="BorderBrush" Value="{DynamicResource Disabled.BackgroundColor}"/>
+                            <Setter TargetName="arrow" Property="Fill" Value="{DynamicResource Disabled.ForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ScrollBar -->
+    <Style TargetType="{x:Type ScrollBar}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid x:Name="Root" Background="{DynamicResource ScrollBar.Track.Static.Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <RepeatButton x:Name="LineUpButton"
+                                      Grid.Row="0" Grid.Column="1"
+                                      Style="{StaticResource ScrollBarLineButtonStyle}"
+                                      Command="ScrollBar.LineUpCommand"
+                                      Content="M 0 4 L 4 0 L 8 4 Z"/>
+                        <RepeatButton x:Name="LineDownButton"
+                                      Grid.Row="2" Grid.Column="1"
+                                      Style="{StaticResource ScrollBarLineButtonStyle}"
+                                      Command="ScrollBar.LineDownCommand"
+                                      Content="M 0 0 L 4 4 L 8 0 Z"/>
+
+                        <RepeatButton x:Name="LineLeftButton"
+                                      Grid.Row="1" Grid.Column="0"
+                                      Style="{StaticResource ScrollBarLineButtonStyle}"
+                                      Command="ScrollBar.LineLeftCommand"
+                                      Content="M 4 0 L 0 4 L 4 8 Z"/>
+                        <RepeatButton x:Name="LineRightButton"
+                                      Grid.Row="1" Grid.Column="2"
+                                      Style="{StaticResource ScrollBarLineButtonStyle}"
+                                      Command="ScrollBar.LineRightCommand"
+                                      Content="M 0 0 L 4 4 L 0 8 Z"/>
+
+                        <Track x:Name="PART_Track"
+                               Grid.Row="1" Grid.Column="1">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource ScrollBarPageButtonStyle}" Command="ScrollBar.PageUpCommand" />
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource ScrollBarPageButtonStyle}" Command="ScrollBar.PageDownCommand" />
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ScrollBarThumbStyle}" />
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter TargetName="Root" Property="Background" Value="{DynamicResource ScrollBar.Track.Static.Background}"/>
+                            <Setter TargetName="LineUpButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LineDownButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LineLeftButton" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="LineRightButton" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="PART_Track" Property="Orientation" Value="Horizontal"/>
+                            <Setter TargetName="Root" Property="Margin" Value="0,1"/>
+                        </Trigger>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="Root" Property="Background" Value="{DynamicResource ScrollBar.Track.Static.Background}"/>
+                            <Setter TargetName="LineLeftButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LineRightButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LineUpButton" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="LineDownButton" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="PART_Track" Property="Orientation" Value="Vertical"/>
+                            <Setter TargetName="Root" Property="Margin" Value="1,0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
