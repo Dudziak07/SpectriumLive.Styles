@@ -8,7 +8,7 @@
   
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SpectriumLive.Styles</PackageId>
-    <Version>1.10.5</Version>
+    <Version>1.10.6</Version>
     <Authors>Dudziak07</Authors>
     <Description>Set of reusable WPF styles for Spectrium applications.</Description>
     <RepositoryUrl>https://github.com/Dudziak07/SpectriumLive.Styles</RepositoryUrl>
