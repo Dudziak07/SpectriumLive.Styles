@@ -15,6 +15,9 @@ jobs:
     name: Build & Publish Package
     runs-on: windows-latest
     timeout-minutes: 15
+    env:
+      NUGET_AUTH_TOKEN: ${{ secrets.NUGET_AUTH_TOKEN }}
+      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -43,12 +46,8 @@ jobs:
 
       - name: Push to GitHub Packages
         if: env.NUGET_AUTH_TOKEN != ''
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_AUTH_TOKEN }}
-        run: dotnet nuget push "nupkg/**/*.nupkg" --api-key "${{ secrets.NUGET_AUTH_TOKEN }}" --source "https://nuget.pkg.github.com/Dudziak07/index.json" --skip-duplicate
+        run: dotnet nuget push "nupkg/**/*.nupkg" --api-key "${{ env.NUGET_AUTH_TOKEN }}" --source "https://nuget.pkg.github.com/Dudziak07/index.json" --skip-duplicate
 
       - name: Push to NuGet.org
         if: env.NUGET_API_KEY != ''
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: dotnet nuget push "nupkg/**/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
+        run: dotnet nuget push "nupkg/**/*.nupkg" --api-key "${{ env.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
