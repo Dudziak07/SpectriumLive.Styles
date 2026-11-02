@@ -11,8 +11,11 @@
     <Version>1.11.1</Version>
     <Authors>Filip Dudziec</Authors>
     <Company>Dudziak07</Company>
-    <Description>Set of reusable WPF styles for Spectrium applications.</Description>
+    <Description>Modern, lightweight, and reusable WPF style library with dark and light themes for .NET desktop applications.</Description>
+    <PackageTags>wpf;styles;theme;dark-theme;light-theme;xaml;controls;ui;spectrium;dotnet</PackageTags>
+    <PackageProjectUrl>https://github.com/Dudziak07/SpectriumLive.Styles</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dudziak07/SpectriumLive.Styles</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Copyright>Copyright (c) 2025-2026 Filip Dudziec</Copyright>
