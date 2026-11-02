@@ -25,9 +25,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@3951f0dfe7a07e2313ec93c75700083e2005cbab # v4.3.0
         with:
-          dotnet-version: |
-            9.0.x
-            10.0.x
+          dotnet-version: 10.0.x
 
       - name: Restore dependencies
         run: dotnet restore SpectriumLive.Styles.sln
@@ -39,7 +37,7 @@ jobs:
         shell: pwsh
         run: |
           $VERSION = "${{ github.ref_name }}".TrimStart('v')
-          if ([string]::IsNullOrWhiteSpace($VERSION)) { $VERSION = '1.11.0' }
+          if ([string]::IsNullOrWhiteSpace($VERSION)) { $VERSION = '1.11.1' }
           dotnet pack SpectriumLive.Styles/SpectriumLive.Styles.csproj --configuration Release --no-build --output ./nupkg -p:PackageVersion=$VERSION
 
       - name: Push to GitHub Packages
