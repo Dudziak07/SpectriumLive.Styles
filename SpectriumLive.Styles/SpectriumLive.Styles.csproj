@@ -8,7 +8,7 @@
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SpectriumLive.Styles</PackageId>
-    <Version>1.11.1</Version>
+    <Version>1.11.2</Version>
     <Authors>Filip Dudziec</Authors>
     <Company>Dudziak07</Company>
     <Description>Modern, lightweight, and reusable WPF style library with dark and light themes for .NET desktop applications.</Description>
@@ -16,6 +16,7 @@
     <PackageProjectUrl>https://github.com/Dudziak07/SpectriumLive.Styles</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dudziak07/SpectriumLive.Styles</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Updated documentation, search tags, repository metadata and modern WPF styles for .NET 10.0.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Copyright>Copyright (c) 2025-2026 Filip Dudziec</Copyright>

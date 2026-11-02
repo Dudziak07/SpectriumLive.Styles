@@ -37,7 +37,7 @@ jobs:
         shell: pwsh
         run: |
           $VERSION = "${{ github.ref_name }}".TrimStart('v')
-          if ([string]::IsNullOrWhiteSpace($VERSION)) { $VERSION = '1.11.1' }
+          if ([string]::IsNullOrWhiteSpace($VERSION)) { $VERSION = '1.11.2' }
           dotnet pack SpectriumLive.Styles/SpectriumLive.Styles.csproj --configuration Release --no-build --output ./nupkg -p:PackageVersion=$VERSION
 
       - name: Push to GitHub Packages

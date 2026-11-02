@@ -45,7 +45,7 @@ Install-Package SpectriumLive.Styles
 
 ### PackageReference (csproj)
 ```xml
-<PackageReference Include="SpectriumLive.Styles" Version="1.11.1" />
+<PackageReference Include="SpectriumLive.Styles" Version="1.11.2" />
 ```
 
 ---
