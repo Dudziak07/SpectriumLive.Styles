@@ -1,0 +1,58 @@
+name: "🐛 Bug Report"
+description: Report a broken style, visual artifact, or issue in SpectriumLive.Styles
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! Please provide as much detail as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: E.g. Button focus border is clipped when placed in a Grid...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Affected Theme
+      description: Which theme exhibits this issue?
+      options:
+        - Both Dark and Light
+        - DarkTheme only
+        - LightTheme only
+    validations:
+      required: true
+
+  - type: input
+    id: affected_control
+    attributes:
+      label: Affected Control / Component
+      description: E.g., Button, ComboBox, ScrollBar, Menu, Converter, etc.
+      placeholder: Button
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Steps or XAML snippet to reproduce the behavior.
+      placeholder: |
+        1. Add ComboBox to XAML...
+        2. Set style to {StaticResource ...}...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: .NET version, Windows version, and package version.
+      placeholder: .NET 10, Windows 11 x64, SpectriumLive.Styles 1.11.2
+    validations:
+      required: true

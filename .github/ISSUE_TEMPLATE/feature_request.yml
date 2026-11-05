@@ -1,0 +1,32 @@
+name: "✨ Feature Request"
+description: Suggest a new control style, theme variant, or enhancement
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for a new control style or improvement in SpectriumLive.Styles? Let us know!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a missing control style or UX improvement?
+      placeholder: Currently there is no custom style for TabControl / TreeView...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution / Visual Concept
+      description: Describe what the proposed control or style should look like.
+      placeholder: A modern, minimalist TabControl template matching the Dark/Light palette...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or features you've considered.

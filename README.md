@@ -4,6 +4,7 @@
   <a href="https://www.nuget.org/packages/SpectriumLive.Styles/"><img src="https://img.shields.io/nuget/v/SpectriumLive.Styles?style=flat-square&logo=nuget" alt="NuGet Version"></a>
   <a href="https://www.nuget.org/packages/SpectriumLive.Styles/"><img src="https://img.shields.io/nuget/dt/SpectriumLive.Styles?style=flat-square&logo=nuget" alt="NuGet Downloads"></a>
   <a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-10.0-512BD4?style=flat-square" alt=".NET 10.0"></a>
+  <a href="https://github.com/Dudziak07/SpectriumLive.Styles/actions/workflows/ci.yml"><img src="https://github.com/Dudziak07/SpectriumLive.Styles/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
   <a href="https://github.com/Dudziak07/SpectriumLive.Styles/actions/workflows/publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/Dudziak07/SpectriumLive.Styles/publish.yml?style=flat-square&label=Publish" alt="Publish Status"></a>
   <a href="https://github.com/Dudziak07/SpectriumLive.Styles/blob/main/LICENSE.txt"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License"></a>
   <a href="https://github.com/Dudziak07"><img src="https://img.shields.io/badge/Author-Filip%20Dudziec-purple?style=flat-square&logo=github" alt="Author Profile"></a>
